@@ -17,9 +17,9 @@ export default class BasicInfo extends Component{
                         DATE OF BIRTH
                     </div>
                     <div className="date-container">
-                        <div className="date"><input type="text" placeholder="DD" /></div>
-                        <div className="month"><input type="text" placeholder="MM" /></div>
-                        <div className="year"><input type="text" placeholder="YYYY" /></div>
+                        <div className="date"><input type="text" id="date" value={this.props.data.date} onChange={this.props.handleDateChange} placeholder="DD" /></div>
+                        <div className="month"><input type="text" id="month" value={this.props.data.month} onChange={this.props.handleDateChange} placeholder="MM" /></div>
+                        <div className="year"><input type="text" id="year" value={this.props.data.year} onChange={this.props.handleDateChange} placeholder="YYYY" /></div>
                     </div>
                 </div>
                 <div className="gender">
