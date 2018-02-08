@@ -47,7 +47,7 @@ export default class BasicInfo extends Component{
                 </div>
                 <div className="divider"></div>
                 <div className="navigation">
-                    <div className="button-back">Back</div>
+                    <div className="button-back"><Link to="/">Back</Link></div>
                     <div className="button-next"><Link to="/completed">Next</Link></div>
                 </div>
             </div>
