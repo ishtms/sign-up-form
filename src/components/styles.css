@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+/* According to my guess, the font used in teh image is very similar to Lato or Roboto, but I am using Lato as I like it more */
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{
+    width: 360px;
+    height: 500px;
+    border: 1.3px solid rgb(214,214,214);
+    border-radius: 10px;
+    position: absolute;
+    left: 50%; 
+    display: flex;
+    flex-direction: column;
+    color: rgb(60, 138, 233);
+    top: 50%;
+    font-family: 'Lato', sans-serif;
+    transform: translate(-50%,-50%); /* Last three lines are just aligning the whole div in the center */
+}
+.header{
+    font-size: 1.2em;
+    padding: 15.5px;
+}
+.progress-bar{
+    width: 358px; /* As teh borders are 1px wide, I have to make it 2 px less  or it will overflow */
+    height: 5px;
+    border: 1px solid rgb(214,214,214);
+}
+
+.progress-bar .introduction-bar{
+    height: 100%;
+    width: 120px; /* I can do it dynamically in react inline styles too, but as we know it's 3 fixed routes, so doing it myself statically.*/
+    background-color: rgb(60, 138, 233);
+}
+
+.progress-bar .basic-bar{
+    height: 100%;
+    width: 240px; 
+    background-color: rgb(60, 138, 233);
+}
+
+.progress-bar .completed-bar{
+    height: 100%;
+    width: 360px; 
+    background-color: rgb(60, 138, 233);
+}
+/* Introduction component styles Start */
+
+.input-fields{
+    margin: 40px 0px 20px 0px;
+    padding: 5px 23px;
+}
+
+.email, .password, .confirm{
+    padding: 5px;
+    text-align: left;
+    color: rgb(175,175,175);
+}
+.input-fields input{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid rgb(175,175,175);
+    margin: 20px 0 25px auto;
+    font-size: 14px;
+    font-family: Lato, sans-serif;
+    outline: none;
+    color: rgb(60, 138, 233);
+}
+.confirm{
+    margin-bottom: 13px;
+}
+
+
+
+/* Introduction component styles End */
+
+/*   BasicInfo Component Styles Start   */
+
+.birth{
+    padding: 21px 13px 15px 13px;
+}
+
+.gender, .source{
+    padding: 15px 13px;
+}
+
+.birth .heading{
+    font-weight: bold;
+    font-size: 14px;
+    margin: 20px 0px;
+    color: rgb(175,175,175);
+}
+
+.date-container, .gender-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(214,214,214);
+    border-radius: 5px;
+}
+.date, .month, .year{
+    flex: 1;
+    padding: 13px;
+    cursor: pointer;
+}
+.month, .female{
+    border-left: 1px solid rgb(214,214,214);
+    border-right: 1px solid rgb(214,214,214);
+}
+.date-container input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 33px;
+    font-size: 12px;
+}
+
+.gender .heading, .source .heading{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0px;   
+    color: rgb(175,175,175);    
+}
+
+.male, .female, .unspecified{
+    cursor: pointer;
+    align-items: center;
+    font-size: 14px;
+    padding: 15px;
+    transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1)
+}
+.gender-container div:hover{
+    background-color: rgb(60, 138, 233);
+    color: white;
+}
+.male, .female, .unspecified{
+    flex: 1;
+}
+
+.source select{
+    border: 1px solid rgb(214,214,214);
+    color: rgb(60, 138, 233);
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    outline: none;
+    height: 40px;
+    background-color: transparent;
+    width: 300px;
+}
+
+.divider{
+    height: 1px;
+    width: 100%;
+    margin: 19px 0;
+    background-color: rgb(214,214,214);
+}
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.navigation div{
+    flex: 1;
+    align-content: center;
+    font-size: 18px;
+}
+.navigation div:hover{
+    cursor: pointer;
+}
+/* Classes to add hover effects */
+
+.active{
+    background-color: rgb(60, 138, 233);
+    color: white;
+}
+.inactive{
+    color: rgb(60, 138, 233);
+}
+
+/* -- End hover classes -- */
+
+/* Basic Info Component Styles End */
+
+/* Completed Component Styles Start */
+
+/* Designing the checked mark logo */
+
+.logo{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(168, 239, 123);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo div{
+    height: 10px;
+    background-color: white;
+}
+
+.logo .left{
+    width: 60px;
+    position: relative;
+    left: 35px;
+    top: 130px;
+    border-radius: 50px 25px 25px 0px; /* giving those hands a bit leaf like structure */
+    transform-origin: 100%;
+    animation: animate-left-hand 1.5s 1;
+    animation-fill-mode: forwards;
+}
+.logo .right{
+    width: 100px;
+    position: relative;
+    left: 89px;
+    top: 120px;
+    border-radius: 25px 0 100px 25px;    
+    transform-origin: 0%;
+    animation: animate-right-hand 1.5s 1;
+    animation-fill-mode: forwards;
+}
+
+.go-to-dashboard{
+    padding: 12px 8px;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    color: rgb(60, 138, 233);
+    visibility: hidden; /*Initial visibility of hidden, just to make animation more appealing. I will give it a delay of 1.5s, so it shows up after the completed animation completes*/
+    background-color: transparent;
+    border: 1px solid rgb(60, 138, 233);
+    border-radius: 5px;
+    position: absolute;
+    top: calc(50% + 150px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: show-button 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
+
+.go-to-dashboard:hover{
+    color: white;
+    background-color: rgb(60, 138, 233);
+    cursor: pointer;
+    outline: none;
+}
+
+@keyframes animate-right-hand{
+    from{
+        transform: rotate(0deg)
+    }to{
+        transform: rotate(-50deg)
+    }
+}
+@keyframes animate-left-hand{
+    from{
+        transform: rotate(0deg)
+    }to{
+        transform: rotate(30deg);
+        
+    }
+}
+@keyframes show-button {
+    from{
+        visibility: hidden;
+    }to{
+        visibility: visible;
+    }
+}
