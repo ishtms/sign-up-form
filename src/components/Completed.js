@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import './styles.css';
 
 export default class Completed extends Component{
+    constructor(props){
+        super(props);
+    }
+    componentDidMount(){
+        alert("Printing data on console!")
+    }
     render(){
+        console.log({data: {...this.props.data}})
         return (
             <div className="container">
                 <div className="header">

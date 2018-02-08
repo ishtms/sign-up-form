@@ -125,7 +125,11 @@ a{
     margin: 10px 0px;   
     color: rgb(175,175,175);    
 }
-
+.gender-container button{
+    border: none;
+    outline: none;
+    margin: none;
+}
 .male, .female, .unspecified{
     cursor: pointer;
     align-items: center;
@@ -133,7 +137,7 @@ a{
     padding: 15px;
     transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1)
 }
-.gender-container div:hover{
+.gender-container button:hover{
     background-color: rgb(60, 138, 233);
     color: white;
 }
